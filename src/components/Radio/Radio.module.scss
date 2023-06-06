@@ -1,0 +1,36 @@
+.radio {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 15px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.input {
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d0cfcf;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00bdd3;
+    visibility: hidden;
+  }
+  &:checked {
+    border-color: #00bdd3;
+  }
+  &:checked::before {
+    visibility: visible;
+  }
+}

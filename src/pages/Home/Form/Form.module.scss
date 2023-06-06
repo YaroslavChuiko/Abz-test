@@ -1,0 +1,16 @@
+.form {
+  margin: 0 auto;
+  max-width: 380px;
+
+  & > * {
+    margin-bottom: 40px;
+  }
+}
+
+.positionHeader {
+  margin-bottom: 8px;
+}
+
+.formFooter {
+  text-align: center;
+}

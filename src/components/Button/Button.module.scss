@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+.btn {
+  display: inline-block;
+  padding: 9px 20px;
+  min-width: 100px;
+
+  font-family: $font-stack;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 16px;
+  vertical-align: middle;
+
+  line-height: 1;
+  text-align: center;
+
+  border-radius: 80px;
+  border: none;
+
+  cursor: pointer;
+
+  &.yellow {
+    background-color: $primary;
+
+    &:hover {
+      background-color: #ffe302;
+    }
+  }
+
+  &:disabled {
+    background-color: #b4b4b4;
+    color: #ffffff;
+    cursor: not-allowed;
+  }
+}
