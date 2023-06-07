@@ -13,7 +13,7 @@ const Users = ({ isRefetch, setIsRefetch }) => {
   const [totalPages, setTotalPages] = useState(1);
 
   const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const refetch = () => {
@@ -23,13 +23,13 @@ const Users = ({ isRefetch, setIsRefetch }) => {
     };
 
     const getUsers = () => {
-      setIsLoading(true);
+      // setIsLoading(true);
       api
         .get(`/users?page=${page}&count=${perPage}`)
         .then((res) => {
           setUsers((prevValue) => [...prevValue, ...res.data.users]);
           setTotalPages(res.data.total_pages);
-          setIsLoading(false);
+          // setIsLoading(false);
         })
         .catch((error) => {
           console.log(error);
