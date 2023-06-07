@@ -1,3 +1,5 @@
+@use '../../../styles/media' as *;
+
 .content {
   text-align: center;
 }
@@ -7,4 +9,16 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   margin-bottom: 50px;
+
+  @include for-tablet-landscape {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    justify-items: center;
+  }
+
+  @include for-tablet-portrait {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
 }

@@ -1,13 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import Section from '../../../components/Section/Section';
-import Card from '../../../components/Card/Card';
-import axios from 'axios';
 import Button from '../../../components/Button/Button';
-import s from './Users.module.scss';
+import Card from '../../../components/Card/Card';
+import Section from '../../../components/Section/Section';
 import SectionHeader from '../../../components/SectionHeader/SectionHeader';
-
-const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
+import api from '../../../libs/axios';
+import s from './Users.module.scss';
 
 const Users = ({ isRefetch, setIsRefetch }) => {
   const perPage = 6;
@@ -26,8 +24,8 @@ const Users = ({ isRefetch, setIsRefetch }) => {
 
     const getUsers = () => {
       setIsLoading(true);
-      axios
-        .get(`${url}?page=${page}&count=${perPage}`)
+      api
+        .get(`/users?page=${page}&count=${perPage}`)
         .then((res) => {
           setUsers((prevValue) => [...prevValue, ...res.data.users]);
           setTotalPages(res.data.total_pages);

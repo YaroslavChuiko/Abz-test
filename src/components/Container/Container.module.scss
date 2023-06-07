@@ -1,6 +1,19 @@
+@use '../../styles/media' as *;
+
 .container {
   max-width: 1170px;
-  // padding: 0 15px;
   margin: 0 auto;
   height: 100%;
+
+  @include for-desktop {
+    padding: 0 60px;
+  }
+
+  @include for-tablet-landscape {
+    padding: 0 32px;
+  }
+
+  @include for-tablet-portrait {
+    padding: 0 16px;
+  }
 }

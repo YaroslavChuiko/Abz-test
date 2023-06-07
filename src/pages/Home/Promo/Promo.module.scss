@@ -1,17 +1,29 @@
+@use '../../../styles/media' as *;
+
 .promo {
   min-height: 650px;
-  // background-image: url('./../../../assets/pexels-alexandr-podvalny-1227513.jpeg');
   background-image: url('./../../../assets/Rectangle\ 29.png');
-  // background-size: co;
-  // background-position: center 70%;
-  // background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+
+  @include for-tablet-landscape {
+    min-height: 500px;
+  }
+
+  @include for-tablet-portrait {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
 }
 
 .content {
-  max-width: 380px;
+  max-width: 395px;
+  padding: 0 15px;
   text-align: center;
   color: #fff;
 }

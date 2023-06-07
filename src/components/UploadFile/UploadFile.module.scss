@@ -3,6 +3,7 @@
 .container {
   display: flex;
   cursor: pointer;
+  overflow: hidden;
 
   &.error {
     .field,

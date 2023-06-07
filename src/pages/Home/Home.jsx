@@ -14,8 +14,8 @@ const Home = () => {
 
   return (
     <div className={s.home}>
+      <Promo />
       <Container>
-        <Promo />
         <Users isRefetch={isRefetchUsers} setIsRefetch={setIsRefetchUsers} />
         <Form refetchUsers={refetchUsers} />
       </Container>
