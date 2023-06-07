@@ -31,5 +31,9 @@
     background-color: #b4b4b4;
     color: #ffffff;
     cursor: not-allowed;
+
+    &:hover {
+      background-color: #b4b4b4;
+    }
   }
 }

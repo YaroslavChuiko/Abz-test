@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import Section from '../../../components/Section/Section';
 import Card from '../../../components/Card/Card';
@@ -8,7 +9,7 @@ import SectionHeader from '../../../components/SectionHeader/SectionHeader';
 
 const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
 
-const Users = () => {
+const Users = ({ isRefetch, setIsRefetch }) => {
   const perPage = 6;
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -17,6 +18,12 @@ const Users = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const refetch = () => {
+      setPage(1);
+      setUsers([]);
+      setIsRefetch(false);
+    };
+
     const getUsers = () => {
       setIsLoading(true);
       axios
@@ -30,8 +37,13 @@ const Users = () => {
           console.log(error);
         });
     };
+
+    if (isRefetch) {
+      refetch();
+      return;
+    }
     getUsers();
-  }, [page]);
+  }, [page, isRefetch]);
 
   return (
     <Section>
